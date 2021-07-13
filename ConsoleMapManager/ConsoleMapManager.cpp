@@ -1,5 +1,6 @@
 // ConsoleMapManager.cpp : This file contains the 'main' function. Program execution begins and ends there.
 //
+#include "pch.h"
 
 #include <iostream>
 
@@ -14,6 +15,8 @@ int main()
     try
     {
         MapManager mapManager;
+        mapManager.instrument(true);
+        mapManager.debugMode(true);
         WorldDefiner WD(2, 3, WDType::elevator, 0.5, 5000);
         mapManager.addWD(WD);
     }

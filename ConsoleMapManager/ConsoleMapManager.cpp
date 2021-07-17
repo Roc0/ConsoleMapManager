@@ -17,7 +17,7 @@ int main()
         MapManager mapManager;
         mapManager.instrument(true);
         mapManager.debugMode(true);
-        WorldDefiner WD(2, 3, WDType::elevator, 0.5, 5000);
+        WorldDefiner WD(2, 3, WDType::elevator, 0.5, 500);
         mapManager.addWD(WD);
     }
     catch (MapManagerException& e)

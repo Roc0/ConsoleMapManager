@@ -10,7 +10,7 @@ using namespace TheWorld_MapManager;
 
 int main()
 {
-    std::cout << "MapManager ...\n";
+    std::cout << "ConsoleMapManager ...\n\n";
 
     try
     {

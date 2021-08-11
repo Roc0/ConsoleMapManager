@@ -19,10 +19,10 @@ int main()
         mapManager.debugMode(true);
         
         WorldDefiner WD1(2, 3, WDType::elevator, (float)0.5, (float)50);
-        mapManager.addWD(WD1);
+        bool added = mapManager.addWD(WD1);
         
         WorldDefiner WD2(3, 4, WDType::elevator, (float)0.7, (float)50);
-        mapManager.addWD(WD2);
+        added = mapManager.addWD(WD2);
 
         mapManager.UpdateValues();
         

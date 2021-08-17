@@ -18,12 +18,12 @@ int main()
         mapManager.instrument(true);
         mapManager.debugMode(true);
         
-        WorldDefiner WD1(2, 3, WDType::elevator, (WDFunctionType)-1, (float)0.5, (float)50);
-        WorldDefiner WD2(3, 4, WDType::elevator, (WDFunctionType)-1, (float)0.7, (float)50);
+        WorldDefiner WD1(2, 3, WDType::elevator, WDFunctionType::cosin, (float)0.5, (float)50);
+        WorldDefiner WD2(3, 4, WDType::elevator, WDFunctionType::cosin, (float)0.7, (float)50);
 
-        //mapManager.eraseWD(WD1);
+        mapManager.eraseWD(WD1);
         //mapManager.UpdateValues();
-        //mapManager.eraseWD(WD2);
+        mapManager.eraseWD(WD2);
         //mapManager.UpdateValues();
 
         __int64 rowid = mapManager.addWD(WD1);

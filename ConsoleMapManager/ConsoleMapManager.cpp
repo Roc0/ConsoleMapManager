@@ -10,41 +10,73 @@ using namespace TheWorld_MapManager;
 
 int main()
 {
-    std::cout << "ConsoleMapManager ...\n\n";
+    bool test = true;
 
-    try
+    if (test)
     {
-        MapManager mapManager;
-        mapManager.instrument(true);
-        mapManager.debugMode(true);
-        
-        WorldDefiner WD1(2, 3, WDType::elevator, WDFunctionType::cosin, (float)0.5, (float)50);
-        WorldDefiner WD2(3, 4, WDType::elevator, WDFunctionType::cosin, (float)0.7, (float)50);
+        std::cout << "ConsoleMapManager: Test ...\n\n";
 
-        mapManager.eraseWD(WD1);
-        //mapManager.UpdateValues();
-        mapManager.eraseWD(WD2);
-        //mapManager.UpdateValues();
+        try
+        {
+            MapManager mapManager;
+            mapManager.instrument(true);
+            mapManager.debugMode(true);
 
-        __int64 rowid = mapManager.addWD(WD1);
-        rowid = mapManager.addWD(WD2);
-        mapManager.UpdateValues();
-
-        mapManager.finalizeDB();
+            mapManager.Test();
+        }
+        catch (MapManagerException& e)
+        {
+            std::cout << e.exceptionName() << " caught" << std::endl;
+            std::cout << e.what() << std::endl;
+        }
+        catch (std::exception& e)
+        {
+            std::cout << "std::exception caught" << std::endl;
+            std::cout << e.what() << std::endl;
+        }
+        catch (...)
+        {
+            std::cout << "Generic exception caught" << std::endl;
+        }
     }
-    catch (MapManagerException& e)
+    else
     {
-        std::cout << e.exceptionName() << " caught" << std::endl;
-        std::cout << e.what() << std::endl;
-    }
-    catch (std::exception& e)
-    {
-        std::cout << "std::exception caught" << std::endl;
-        std::cout << e.what() << std::endl;
-    }
-    catch (...)
-    {
-        std::cout << "Generic exception caught" << std::endl;
+        std::cout << "ConsoleMapManager ...\n\n";
+
+        try
+        {
+            MapManager mapManager;
+            mapManager.instrument(true);
+            mapManager.debugMode(true);
+
+            WorldDefiner WD1(2, 3, WDType::elevator, WDFunctionType::cosin, (float)0.5, (float)50);
+            WorldDefiner WD2(3, 4, WDType::elevator, WDFunctionType::cosin, (float)0.7, (float)50);
+
+            mapManager.eraseWD(WD1);
+            //mapManager.UpdateValues();
+            mapManager.eraseWD(WD2);
+            //mapManager.UpdateValues();
+
+            __int64 rowid = mapManager.addWD(WD1);
+            rowid = mapManager.addWD(WD2);
+            mapManager.UpdateValues();
+
+            mapManager.finalizeDB();
+        }
+        catch (MapManagerException& e)
+        {
+            std::cout << e.exceptionName() << " caught" << std::endl;
+            std::cout << e.what() << std::endl;
+        }
+        catch (std::exception& e)
+        {
+            std::cout << "std::exception caught" << std::endl;
+            std::cout << e.what() << std::endl;
+        }
+        catch (...)
+        {
+            std::cout << "Generic exception caught" << std::endl;
+        }
     }
 }
 

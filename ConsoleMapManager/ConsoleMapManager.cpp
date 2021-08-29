@@ -22,7 +22,7 @@ int main()
             mapManager.instrument(true);
             mapManager.debugMode(true);
 
-            mapManager.Test();
+            mapManager.LoadGISMap("D:\\TheWorld\\Prove\\untitled2.shp", true);
         }
         catch (MapManagerException& e)
         {
@@ -48,6 +48,8 @@ int main()
             MapManager mapManager;
             mapManager.instrument(true);
             mapManager.debugMode(true);
+
+            mapManager.LoadGISMap("D:\\TheWorld\\Prove\\untitled2.shp", true);
 
             WorldDefiner WD1(2, 3, WDType::elevator, WDFunctionType::cosin, (float)0.5, (float)50);
             WorldDefiner WD2(3, 4, WDType::elevator, WDFunctionType::cosin, (float)0.7, (float)50);

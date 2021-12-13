@@ -23,6 +23,10 @@ int main()
             mapManager.debugMode(true);
 
             mapManager.LoadGISMap("D:\\TheWorld\\Prove\\untitled2.shp", true);
+
+            mapManager.UpdateValues();
+
+            mapManager.finalizeDB();
         }
         catch (MapManagerException& e)
         {

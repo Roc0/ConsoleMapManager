@@ -10,21 +10,21 @@ using namespace TheWorld_MapManager;
 
 int main()
 {
-    bool test = true;
+    int test = 0;
 
-    if (test)
+    std::cout << "ConsoleMapManager ...\n\n";
+
+    if (test == 1)
     {
-        std::cout << "ConsoleMapManager: Test ...\n\n";
-
         try
         {
             MapManager mapManager;
             mapManager.instrument(true);
             mapManager.debugMode(true);
 
-            //mapManager.LoadGISMap("D:\\TheWorld\\Prove\\untitled2.shp", true);
-            //mapManager.UpdateValues();
-            //mapManager.finalizeDB();
+            mapManager.LoadGISMap("D:\\TheWorld\\Prove\\untitled2.shp", true);
+            mapManager.UpdateValues();
+            mapManager.finalizeDB();
         }
         catch (MapManagerException& e)
         {
@@ -41,10 +41,8 @@ int main()
             std::cout << "Generic exception caught" << std::endl;
         }
     }
-    else
+    else if (test == 2)
     {
-        std::cout << "ConsoleMapManager ...\n\n";
-
         try
         {
             MapManager mapManager;
@@ -66,6 +64,38 @@ int main()
             mapManager.UpdateValues();
 
             mapManager.finalizeDB();
+        }
+        catch (MapManagerException& e)
+        {
+            std::cout << e.exceptionName() << " caught" << std::endl;
+            std::cout << e.what() << std::endl;
+        }
+        catch (std::exception& e)
+        {
+            std::cout << "std::exception caught" << std::endl;
+            std::cout << e.what() << std::endl;
+        }
+        catch (...)
+        {
+            std::cout << "Generic exception caught" << std::endl;
+        }
+    }
+    else if (test == 3)
+    {
+        try
+        {
+            MapManager mapManager;
+            mapManager.instrument(true);
+            mapManager.debugMode(true);
+
+            vector<SQLInterface::GridVertex> mesh;
+            mapManager.getMesh(0, 0, MapManager::anchorType::center, 100, mesh);
+            mapManager.getMesh(1197615, 5467999, MapManager::anchorType::center, 100, mesh);
+            mapManager.getMesh(1197615, 5467999, MapManager::anchorType::center, 5000, mesh);
+            mapManager.getMesh(1195425, 5465512, MapManager::anchorType::center, 5000, mesh);
+            mapManager.getMesh(1195425, 5465512, MapManager::anchorType::center, 10000, mesh);
+            mapManager.getMesh(1195425, 5465512, MapManager::anchorType::center, 20000, mesh);
+            mapManager.getMesh(1195425, 5465512, MapManager::anchorType::center, 25000, mesh);
         }
         catch (MapManagerException& e)
         {

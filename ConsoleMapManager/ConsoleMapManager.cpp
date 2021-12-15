@@ -22,11 +22,9 @@ int main()
             mapManager.instrument(true);
             mapManager.debugMode(true);
 
-            mapManager.LoadGISMap("D:\\TheWorld\\Prove\\untitled2.shp", true);
-
-            mapManager.UpdateValues();
-
-            mapManager.finalizeDB();
+            //mapManager.LoadGISMap("D:\\TheWorld\\Prove\\untitled2.shp", true);
+            //mapManager.UpdateValues();
+            //mapManager.finalizeDB();
         }
         catch (MapManagerException& e)
         {

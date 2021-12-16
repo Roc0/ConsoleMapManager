@@ -10,7 +10,11 @@ using namespace TheWorld_MapManager;
 
 int main()
 {
-    int test = 0;
+    int test = 3;
+
+    debugUtils debugUtil;
+    TimerMs clock; // Timer<milliseconds, steady_clock>
+    clock.tick();
 
     std::cout << "ConsoleMapManager ...\n\n";
 
@@ -88,14 +92,31 @@ int main()
             mapManager.instrument(true);
             mapManager.debugMode(true);
 
+            int numPointX = 0, numPointZ = 0, numPatchX = 0, numPatchZ = 0;
+            float gridStepInWU = 0.0f;
             vector<SQLInterface::GridVertex> mesh;
-            mapManager.getMesh(0, 0, MapManager::anchorType::center, 100, mesh);
-            mapManager.getMesh(1197615, 5467999, MapManager::anchorType::center, 100, mesh);
-            mapManager.getMesh(1197615, 5467999, MapManager::anchorType::center, 5000, mesh);
-            mapManager.getMesh(1195425, 5465512, MapManager::anchorType::center, 5000, mesh);
-            mapManager.getMesh(1195425, 5465512, MapManager::anchorType::center, 10000, mesh);
-            mapManager.getMesh(1195425, 5465512, MapManager::anchorType::center, 20000, mesh);
-            mapManager.getMesh(1195425, 5465512, MapManager::anchorType::center, 25000, mesh);
+            vector<MapManager::GridPatch> patches;
+
+            mapManager.getMesh(0, 0, MapManager::anchorType::center, 100, mesh, numPointX, numPointZ, gridStepInWU);
+            mapManager.getPatches(0, 0, MapManager::anchorType::center, 100, patches, numPatchX, numPatchZ, gridStepInWU);
+
+            mapManager.getMesh(1197615, 5467999, MapManager::anchorType::center, 100, mesh, numPointX, numPointZ, gridStepInWU);
+            mapManager.getPatches(1197615, 5467999, MapManager::anchorType::center, 100, patches, numPatchX, numPatchZ, gridStepInWU);
+
+            mapManager.getMesh(1197615, 5467999, MapManager::anchorType::center, 5000, mesh, numPointX, numPointZ, gridStepInWU);
+            mapManager.getPatches(1197615, 5467999, MapManager::anchorType::center, 5000, patches, numPatchX, numPatchZ, gridStepInWU);
+
+            mapManager.getMesh(1195425, 5465512, MapManager::anchorType::center, 5000, mesh, numPointX, numPointZ, gridStepInWU);
+            mapManager.getPatches(1195425, 5465512, MapManager::anchorType::center, 5000, patches, numPatchX, numPatchZ, gridStepInWU);
+
+            mapManager.getMesh(1195425, 5465512, MapManager::anchorType::center, 10000, mesh, numPointX, numPointZ, gridStepInWU);
+            mapManager.getPatches(1195425, 5465512, MapManager::anchorType::center, 10000, patches, numPatchX, numPatchZ, gridStepInWU);
+
+            mapManager.getMesh(1195425, 5465512, MapManager::anchorType::center, 20000, mesh, numPointX, numPointZ, gridStepInWU);
+            mapManager.getPatches(1195425, 5465512, MapManager::anchorType::center, 20000, patches, numPatchX, numPatchZ, gridStepInWU);
+
+            mapManager.getMesh(1195425, 5465512, MapManager::anchorType::center, 25000, mesh, numPointX, numPointZ, gridStepInWU);
+            mapManager.getPatches(1195425, 5465512, MapManager::anchorType::center, 25000, patches, numPatchX, numPatchZ, gridStepInWU);
         }
         catch (MapManagerException& e)
         {
@@ -112,6 +133,8 @@ int main()
             std::cout << "Generic exception caught" << std::endl;
         }
     }
+
+    clock.printDuration((string(__FUNCTION__) + " - ").c_str()); 
 }
 
 void provaProj()

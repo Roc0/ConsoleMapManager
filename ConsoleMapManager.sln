@@ -5,6 +5,7 @@ VisualStudioVersion = 16.0.31402.337
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "ConsoleMapManager", "ConsoleMapManager\ConsoleMapManager.vcxproj", "{3502D6DC-9BDB-463E-BF10-8EAA27AFB4BB}"
 	ProjectSection(ProjectDependencies) = postProject
+		{B84F7231-16CE-41D8-8C08-7B523FF4225B} = {B84F7231-16CE-41D8-8C08-7B523FF4225B}
 		{1BD53CCC-473E-41E9-AF2E-DD0401F5E1CB} = {1BD53CCC-473E-41E9-AF2E-DD0401F5E1CB}
 	EndProjectSection
 EndProject

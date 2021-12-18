@@ -22,7 +22,7 @@ int main()
     {
         try
         {
-            MapManager mapManager;
+            MapManager mapManager(NULL);
             mapManager.instrument(true);
             mapManager.debugMode(true);
 
@@ -49,7 +49,7 @@ int main()
     {
         try
         {
-            MapManager mapManager;
+            MapManager mapManager(NULL);
             mapManager.instrument(true);
             mapManager.debugMode(true);
 
@@ -88,7 +88,7 @@ int main()
     {
         try
         {
-            MapManager mapManager;
+            MapManager mapManager(NULL);
             mapManager.instrument(true);
             mapManager.debugMode(true);
 
@@ -97,25 +97,25 @@ int main()
             vector<SQLInterface::GridVertex> mesh;
             vector<MapManager::GridPatch> patches;
 
-            mapManager.getMesh(0, 0, MapManager::anchorType::center, 100, mesh, numPointX, numPointZ, gridStepInWU);
+            mapManager.getVertices(0, 0, MapManager::anchorType::center, 100, mesh, numPointX, numPointZ, gridStepInWU);
             mapManager.getPatches(0, 0, MapManager::anchorType::center, 100, patches, numPatchX, numPatchZ, gridStepInWU);
 
-            mapManager.getMesh(1197615, 5467999, MapManager::anchorType::center, 100, mesh, numPointX, numPointZ, gridStepInWU);
+            mapManager.getVertices(1197615, 5467999, MapManager::anchorType::center, 100, mesh, numPointX, numPointZ, gridStepInWU);
             mapManager.getPatches(1197615, 5467999, MapManager::anchorType::center, 100, patches, numPatchX, numPatchZ, gridStepInWU);
 
-            mapManager.getMesh(1197615, 5467999, MapManager::anchorType::center, 5000, mesh, numPointX, numPointZ, gridStepInWU);
+            mapManager.getVertices(1197615, 5467999, MapManager::anchorType::center, 5000, mesh, numPointX, numPointZ, gridStepInWU);
             mapManager.getPatches(1197615, 5467999, MapManager::anchorType::center, 5000, patches, numPatchX, numPatchZ, gridStepInWU);
 
-            mapManager.getMesh(1195425, 5465512, MapManager::anchorType::center, 5000, mesh, numPointX, numPointZ, gridStepInWU);
+            mapManager.getVertices(1195425, 5465512, MapManager::anchorType::center, 5000, mesh, numPointX, numPointZ, gridStepInWU);
             mapManager.getPatches(1195425, 5465512, MapManager::anchorType::center, 5000, patches, numPatchX, numPatchZ, gridStepInWU);
 
-            mapManager.getMesh(1195425, 5465512, MapManager::anchorType::center, 10000, mesh, numPointX, numPointZ, gridStepInWU);
+            mapManager.getVertices(1195425, 5465512, MapManager::anchorType::center, 10000, mesh, numPointX, numPointZ, gridStepInWU);
             mapManager.getPatches(1195425, 5465512, MapManager::anchorType::center, 10000, patches, numPatchX, numPatchZ, gridStepInWU);
 
-            mapManager.getMesh(1195425, 5465512, MapManager::anchorType::center, 20000, mesh, numPointX, numPointZ, gridStepInWU);
+            mapManager.getVertices(1195425, 5465512, MapManager::anchorType::center, 20000, mesh, numPointX, numPointZ, gridStepInWU);
             mapManager.getPatches(1195425, 5465512, MapManager::anchorType::center, 20000, patches, numPatchX, numPatchZ, gridStepInWU);
 
-            mapManager.getMesh(1195425, 5465512, MapManager::anchorType::center, 25000, mesh, numPointX, numPointZ, gridStepInWU);
+            mapManager.getVertices(1195425, 5465512, MapManager::anchorType::center, 25000, mesh, numPointX, numPointZ, gridStepInWU);
             mapManager.getPatches(1195425, 5465512, MapManager::anchorType::center, 25000, patches, numPatchX, numPatchZ, gridStepInWU);
         }
         catch (MapManagerException& e)

@@ -12,8 +12,8 @@ int main()
 {
     int test = 3;
 
-    debugUtils debugUtil;
-    TimerMs clock; // Timer<milliseconds, steady_clock>
+    consoleDebugUtil debugUtil(true);
+    TimerMs clock(true, true); // Timer<milliseconds, steady_clock>
     clock.tick();
 
     std::cout << "ConsoleMapManager ...\n\n";
@@ -24,7 +24,7 @@ int main()
         {
             MapManager mapManager(NULL);
             mapManager.instrument(true);
-            mapManager.debugMode(true);
+            mapManager.consoleDebugMode(true);
 
             mapManager.LoadGISMap("D:\\TheWorld\\Prove\\untitled2.shp", true);
             mapManager.UpdateValues();
@@ -51,7 +51,7 @@ int main()
         {
             MapManager mapManager(NULL);
             mapManager.instrument(true);
-            mapManager.debugMode(true);
+            mapManager.consoleDebugMode(true);
 
             mapManager.LoadGISMap("D:\\TheWorld\\Prove\\untitled2.shp", true);
 
@@ -90,7 +90,7 @@ int main()
         {
             MapManager mapManager(NULL);
             mapManager.instrument(true);
-            mapManager.debugMode(true);
+            mapManager.consoleDebugMode(true);
 
             int numPointX = 0, numPointZ = 0, numPatchX = 0, numPatchZ = 0;
             float gridStepInWU = 0.0f;

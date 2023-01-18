@@ -22,7 +22,9 @@ int main()
     {
         try
         {
-            MapManager mapManager(NULL);
+            MapManager::staticInit(nullptr, plog::debug, plog::get(), true);
+			
+			MapManager mapManager(NULL);
             mapManager.instrument(true);
             mapManager.consoleDebugMode(true);
 
@@ -49,6 +51,8 @@ int main()
     {
         try
         {
+            MapManager::staticInit(nullptr, plog::debug, plog::get(), true);
+
             MapManager mapManager(NULL);
             mapManager.instrument(true);
             mapManager.consoleDebugMode(true);
@@ -88,6 +92,8 @@ int main()
     {
         try
         {
+            MapManager::staticInit(nullptr, plog::debug, plog::get(), true);
+
             MapManager mapManager(NULL);
             mapManager.instrument(true);
             mapManager.consoleDebugMode(true);
@@ -137,6 +143,8 @@ int main()
     {
         try
         {
+            MapManager::staticInit(nullptr, plog::debug, plog::get(), true);
+
             MapManager mapManager(NULL);
             mapManager.instrument(true);
             mapManager.consoleDebugMode(true);

@@ -1,21 +1,37 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio Version 16
-VisualStudioVersion = 16.0.31402.337
+# Visual Studio Version 17
+VisualStudioVersion = 17.5.33516.290
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "ConsoleMapManager", "ConsoleMapManager\ConsoleMapManager.vcxproj", "{3502D6DC-9BDB-463E-BF10-8EAA27AFB4BB}"
 	ProjectSection(ProjectDependencies) = postProject
-		{B84F7231-16CE-41D8-8C08-7B523FF4225B} = {B84F7231-16CE-41D8-8C08-7B523FF4225B}
 		{1BD53CCC-473E-41E9-AF2E-DD0401F5E1CB} = {1BD53CCC-473E-41E9-AF2E-DD0401F5E1CB}
+		{1FE1041D-E66C-4D4F-9363-5AA52FA9B32E} = {1FE1041D-E66C-4D4F-9363-5AA52FA9B32E}
+		{B84F7231-16CE-41D8-8C08-7B523FF4225B} = {B84F7231-16CE-41D8-8C08-7B523FF4225B}
 	EndProjectSection
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "TheWorld_MapManager", "..\TheWorld_MapManager\TheWorld_MapManager.vcxproj", "{1BD53CCC-473E-41E9-AF2E-DD0401F5E1CB}"
+	ProjectSection(ProjectDependencies) = postProject
+		{1FE1041D-E66C-4D4F-9363-5AA52FA9B32E} = {1FE1041D-E66C-4D4F-9363-5AA52FA9B32E}
+		{B84F7231-16CE-41D8-8C08-7B523FF4225B} = {B84F7231-16CE-41D8-8C08-7B523FF4225B}
+	EndProjectSection
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "TheWorld_MapManager_UnitTest", "..\TheWorld_MapManager_UnitTest\TheWorld_MapManager_UnitTest.vcxproj", "{7EA2019D-1990-45CD-B190-2138C0692ECD}"
+	ProjectSection(ProjectDependencies) = postProject
+		{1FE1041D-E66C-4D4F-9363-5AA52FA9B32E} = {1FE1041D-E66C-4D4F-9363-5AA52FA9B32E}
+		{B84F7231-16CE-41D8-8C08-7B523FF4225B} = {B84F7231-16CE-41D8-8C08-7B523FF4225B}
+	EndProjectSection
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "lib_json", "..\jsoncpp\makefiles\vs71\lib_json.vcxproj", "{B84F7231-16CE-41D8-8C08-7B523FF4225B}"
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "TheWorld_GDN_Viewer", "..\TheWorld_GDN_Viewer\TheWorld_GDN_Viewer\TheWorld_GDN_Viewer.vcxproj", "{5DFF2AD4-C5AF-4CE4-84D0-9BE41D12C758}"
+	ProjectSection(ProjectDependencies) = postProject
+		{1BD53CCC-473E-41E9-AF2E-DD0401F5E1CB} = {1BD53CCC-473E-41E9-AF2E-DD0401F5E1CB}
+		{1FE1041D-E66C-4D4F-9363-5AA52FA9B32E} = {1FE1041D-E66C-4D4F-9363-5AA52FA9B32E}
+		{B84F7231-16CE-41D8-8C08-7B523FF4225B} = {B84F7231-16CE-41D8-8C08-7B523FF4225B}
+	EndProjectSection
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "TheWorld_Utils", "..\TheWorld_Utils\TheWorld_Utils.vcxproj", "{1FE1041D-E66C-4D4F-9363-5AA52FA9B32E}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -87,6 +103,18 @@ Global
 		{5DFF2AD4-C5AF-4CE4-84D0-9BE41D12C758}.Release|x64.Build.0 = Release|x64
 		{5DFF2AD4-C5AF-4CE4-84D0-9BE41D12C758}.Release|x86.ActiveCfg = Release|Win32
 		{5DFF2AD4-C5AF-4CE4-84D0-9BE41D12C758}.Release|x86.Build.0 = Release|Win32
+		{1FE1041D-E66C-4D4F-9363-5AA52FA9B32E}.Debug|x64.ActiveCfg = Debug|x64
+		{1FE1041D-E66C-4D4F-9363-5AA52FA9B32E}.Debug|x64.Build.0 = Debug|x64
+		{1FE1041D-E66C-4D4F-9363-5AA52FA9B32E}.Debug|x86.ActiveCfg = Debug|Win32
+		{1FE1041D-E66C-4D4F-9363-5AA52FA9B32E}.Debug|x86.Build.0 = Debug|Win32
+		{1FE1041D-E66C-4D4F-9363-5AA52FA9B32E}.dummy|x64.ActiveCfg = Debug|x64
+		{1FE1041D-E66C-4D4F-9363-5AA52FA9B32E}.dummy|x64.Build.0 = Debug|x64
+		{1FE1041D-E66C-4D4F-9363-5AA52FA9B32E}.dummy|x86.ActiveCfg = Debug|Win32
+		{1FE1041D-E66C-4D4F-9363-5AA52FA9B32E}.dummy|x86.Build.0 = Debug|Win32
+		{1FE1041D-E66C-4D4F-9363-5AA52FA9B32E}.Release|x64.ActiveCfg = Release|x64
+		{1FE1041D-E66C-4D4F-9363-5AA52FA9B32E}.Release|x64.Build.0 = Release|x64
+		{1FE1041D-E66C-4D4F-9363-5AA52FA9B32E}.Release|x86.ActiveCfg = Release|Win32
+		{1FE1041D-E66C-4D4F-9363-5AA52FA9B32E}.Release|x86.Build.0 = Release|Win32
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

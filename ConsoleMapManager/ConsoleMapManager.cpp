@@ -208,10 +208,10 @@ void printUsage(void)
     std::cout << std::endl;
     std::cout << "Usage:\n" << std::endl;
     std::cout << "Test <test_number>" << std::endl;
-    std::cout << "GenerateGroundImage <output file dir> <ground type name> <output image size> <Albedo/Color/Diffuse image file path> <Bump/Height/Displ image file path> <Normal image file path> <Roughness image file path>" << std::endl;
+    std::cout << "GenerateGroundImage <output file dir> <ground type name> <output image size> <flipY 'Y/N' > <Albedo/Color/Diffuse image file path> <Bump/Height/Displ image file path> <Normal image file path> <Roughness image file path>" << std::endl;
 }
 
-bool generateGroundImage(std::string outdir, std::string groundTypeName, size_t imageSize, std::string colorFile, std::string bumpFile, std::string normalFile, std::string roughFile)
+bool generateGroundImage(std::string outdir, std::string groundTypeName, size_t imageSize, bool flipY, std::string colorFile, std::string bumpFile, std::string normalFile, std::string roughFile)
 {
     TheWorld_Utils::MemoryBuffer colorImageBuffer;
     TheWorld_Utils::MemoryBuffer bumpImageBuffer;
@@ -343,7 +343,7 @@ bool generateGroundImage(std::string outdir, std::string groundTypeName, size_t 
     bool ret = true;
     try
     {
-        TheWorld_Utils::TerrainEdit::generateGroundImage(outdir, groundTypeName, imageSize, colorImageBuffer, bumpImageBuffer, normalImageBuffer, roughImageBuffer);
+        TheWorld_Utils::TerrainEdit::generateGroundImage(outdir, groundTypeName, imageSize, flipY, colorImageBuffer, bumpImageBuffer, normalImageBuffer, roughImageBuffer);
     }
     catch (std::exception& e)
     {
@@ -392,7 +392,7 @@ int main(int argc, char* argv[])
     }
     else if (cmd == "generategroundimage")
     {
-        if (argc != 9)
+        if (argc != 10)
         {
             std::cout << "Error: wrong parameters ..." << std::endl;
             printUsage();
@@ -402,16 +402,18 @@ int main(int argc, char* argv[])
         std::string outDir = argv[2];
         std::string groundTypeName = argv[3];
         size_t imageSize = size_t(atol(argv[4]));
-        std::string colorFile = argv[5];
+        std::string flipYStr = argv[5];
+        to_lower(flipYStr);
+        std::string colorFile = argv[6];
         if (colorFile == "-")
             colorFile = "";
-        std::string bumpFile = argv[6];
+        std::string bumpFile = argv[7];
         if (bumpFile == "-")
             bumpFile = "";
-        std::string normalFile = argv[7];
+        std::string normalFile = argv[8];
         if (normalFile == "-")
             normalFile = "";
-        std::string roughFile = argv[8];
+        std::string roughFile = argv[9];
         if (roughFile == "-")
             roughFile = "";
         
@@ -422,7 +424,7 @@ int main(int argc, char* argv[])
             exit(1);
         }
 
-        bool ok = generateGroundImage(outDir, groundTypeName, imageSize, colorFile, bumpFile, normalFile, roughFile);
+        bool ok = generateGroundImage(outDir, groundTypeName, imageSize, flipYStr == "y" ? true : false, colorFile, bumpFile, normalFile, roughFile);
         if (!ok)
             exit(1);
     }

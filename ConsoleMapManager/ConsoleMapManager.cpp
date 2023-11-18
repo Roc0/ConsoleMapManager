@@ -213,7 +213,12 @@ void printUsage(void)
 
 bool generateGroundImage(std::string outdir, std::string groundTypeName, size_t imageSize, bool flipY, std::string colorFile, std::string bumpFile, std::string normalFile, std::string roughFile)
 {
-    TheWorld_Utils::MemoryBuffer colorImageBuffer;
+    // color	<==>	albedo
+	// bump		<==>	displacement	<==>	depth
+	// normal
+	// roughness
+	
+	TheWorld_Utils::MemoryBuffer colorImageBuffer;
     TheWorld_Utils::MemoryBuffer bumpImageBuffer;
     TheWorld_Utils::MemoryBuffer normalImageBuffer;
     TheWorld_Utils::MemoryBuffer roughImageBuffer;
